@@ -1,0 +1,85 @@
+#1.Create a list of students, including their names, ages, and a list of subjects they are studying.
+#Write a function that calculates a student's average score based on their grades in subjects.
+students1 = [
+    {"name": "Alice", "age": 20, "subjects": ["Math", "Physics", "Chemistry"], "grades": [85, 92, 78]},
+    {"name": "Bob", "age": 22, "subjects": ["History", "English", "Biology"], "grades": [75, 80, 90]},
+    {"name": "Charlie", "age": 21, "subjects": ["Computer Science", "Statistics"], "grades": [95, 88]}
+]
+#ADD to the dictionary
+def calculate_average_grade(students):
+    for student in students:
+        student["average"] = round(sum(student["grades"])/len(student["grades"]),1)
+        print(student)
+calculate_average_grade(students1)
+
+#TAKE OUT names and avarage
+def calculate_average_grade(students):
+    for student in students:
+        student["average"] = round(sum(student["grades"])/len(student["grades"]),1)
+        print(student["name"],student["average"])
+calculate_average_grade(students1)
+
+
+#2.Create a list of orders with information about customers, products, and the quantity of each product.
+#Write a function to calculate the total cost of an order.
+orders1 = [
+    {"customer": "Customer 1", "products": {"Product A": 3, "Product B": 2, "Product C": 1}},
+    {"customer": "Customer 2", "products": {"Product A": 2, "Product D": 4}},
+    {"customer": "Customer 3", "products": {"Product B": 1, "Product C": 3}},
+]
+product_prices = {
+    "Product A": 10.0,
+    "Product B": 5.0,
+    "Product C": 8.0,
+    "Product D": 12.0
+}
+def calculate_order_total(orders, prices):
+    total_cost = 0
+    for order in orders:
+        for product, quantity in order["products"].items():
+            if product in prices:
+                total_cost += prices[product] * quantity
+        print(order["customer"], total_cost)
+calculate_order_total(orders1, product_prices)
+
+
+#3.Create a list of cities, and within each city, a list of landmarks.
+#.Display a list of all landmarks in a selected city.
+cities_and_landmarks = {
+    "New York": ["Statue of Liberty", "Central Park", "Empire State Building"],
+    "Paris": ["Eiffel Tower", "Louvre Museum", "Notre-Dame Cathedral"],
+    "Tokyo": ["Tokyo Tower", "Senso-ji Temple", "Shibuya Crossing"],
+}
+city = input("Input city: ")
+print(cities_and_landmarks[city])
+
+#4.Fill a matrix with random values. Fill the main diagonal with ones, above the main diagonal with twos, and below the main diagonal with threes.
+
+import random
+rows = 5
+columns = 5
+start = 1
+finish = 10
+matrix = []
+# filling with random values:
+for i in range(rows):
+    line = []
+    for j in range(columns):
+        line.append(random.randint(start, finish))
+    matrix.append(line)
+print(matrix)
+
+#filling with ones, twos, threes:
+for i in range(rows):
+    for j in range(columns):
+        if i < j:
+            matrix[i][j] = 2
+        elif i > j:
+            matrix[i][j] = 3
+        else:
+            matrix[i][j] = 1
+print(matrix)
+
+#showing matrix in output:
+for row in matrix:
+    print(*row, sep=' ', end='\n')
