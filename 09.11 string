@@ -1,0 +1,78 @@
+#8. Split a string into substrings using a specified delimiter.
+def split_with(string, spliter):
+    return string.split(spliter)
+print(split_with('Split a string into substrings', ' '))
+
+
+#7. Replace a substring in a string with another substring.
+string1 = 'Replace a substring in a string'
+substring1 = 'substring in a string'
+substring2 = 'string in a string'
+string2 = string1.replace(substring1, substring2)
+print(string2)
+
+#6. Trim whitespace characters at the beginning and end of a string.
+#3
+string = '   Trim whitespace characters at the beginning and end of a string.  '
+string_list = string.split()
+for s in string_list:
+    print(s, end = ' ')
+print()
+
+#2
+string = '   Trim whitespace characters at the beginning and end of a string.  '
+string_list = string.split()
+string = ' '.join(string_list)
+print(string)
+
+
+#1
+string = '   Trim whitespace characters at the beginning and end of a string.  '
+print(string.strip())
+
+#5. Check if a string is a palindrome.
+a = 'abba'
+print(a == a[::-1])
+
+#4. Count the occurrences of a specific character in a string.
+#3
+string = 'Count the occurrences of a specific character in a string'
+symbol = 'о'
+print(string.count(symbol))
+
+
+#2
+string = 'Count the occurrences of a specific character in a string'
+symbol = 'о'
+print(sum([1 for s in string if s==symbol]))
+
+#1
+def number_of_symbol(string,symbol):
+    n = 0
+    for s in string:
+        if s == symbol:
+            n += 1
+    return n
+print(number_of_symbol('Count the occurrences of a specific character in a string', 'о'))
+
+
+
+#3. Convert a string to lowercase.
+def lower_str(a):
+    return a.lower()
+print(lower_str('Convert a string to lowercase'))
+
+
+#2. Convert a string to uppercase.
+def upper_str(a):
+    return a.upper()
+print(upper_str("Convert a string to uppercase"))
+
+#1. Determine the length of a string.
+#2
+print(len("Determine the length of a string"))
+
+#1
+def length(a):
+    return len(a)
+print(length("Determine the length of a string"))
