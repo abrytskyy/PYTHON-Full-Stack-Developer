@@ -1,5 +1,5 @@
 #1. Create a class named Person with attributes name and age, and methods for setting and retrieving these attributes
-# using setattr and getattr.
+# using setattr and getattr. 
 class Person:
     def __init__(self, name, age):
         self.name = name
