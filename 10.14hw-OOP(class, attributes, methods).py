@@ -34,7 +34,7 @@ print(my_rectangle.width, my_rectangle.height, my_rectangle.get_perimeter())
 
 
 
-# Design a class Circle with an attribute radius. Implement a method get_area that returns the area of the circle.
+#3. Design a class Circle with an attribute radius. Implement a method get_area that returns the area of the circle.
 import math
 class Circle:
     def __init__(self, radius):
