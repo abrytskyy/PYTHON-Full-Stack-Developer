@@ -1,4 +1,4 @@
-#Declare the following classes in the program:
+#1. Declare the following classes in the program:
 #
 # CPU - a class for describing processors.
 # Memory - a class for describing memory.
@@ -73,10 +73,16 @@ class CPU:
     def __init__(self, name, fr):
         self.name = name
         self.fr = fr
+
+    def __str__(self):
+        return f"Name: {self.name} Fr: {self.fr}"
 class Memory:
     def __init__(self, name, volume):
         self.name = name
         self.volume = volume
+
+    def __str__(self):
+        return f"Name: {self.name} Volume: {self.volume}"
 class MotherBoard:
     def __init__(self, name, cpu:CPU, memory_slots:list[Memory], total_mem_slots=4):
         self.name = name
@@ -86,15 +92,13 @@ class MotherBoard:
     def get_config(self):
         return [
             f"Motherboard: {self.name}",
-            f"Central Processor: {self.cpu.name}, {self.cpu.fr}",
+            f"CPU: {self.cpu}",
             f"Memory Slots: {self.total_mem_slots}",
             f"Memory: {self.decompose_list()}"
         ]
 
-
-
     def decompose_list(self):
-        return [f" Name: {memory.name}, Volume: {memory.volume}"for memory in self.memory_slots]
+        return [memory.__str__() for memory in self.memory_slots]
 
 cpu = CPU('Intel 17', '2.4Hz')
 mem1 = Memory('Kingstone', '4Gb')
@@ -102,4 +106,3 @@ mem2 = Memory('Kingstone', '6Gb')
 memories = [mem1, mem2]
 mb = MotherBoard('Asus', cpu, memories)
 print(*mb.get_config(), sep="\n")
-
