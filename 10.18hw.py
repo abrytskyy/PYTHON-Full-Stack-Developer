@@ -72,3 +72,6 @@ cart.add(Cup("Yeti Rambler Mug", 29.99))
 
 for product in cart.get_list():
     print(product)
+
+#or
+#print(*cart.get_list(), sep="\n")
